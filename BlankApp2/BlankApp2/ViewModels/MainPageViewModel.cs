@@ -23,6 +23,7 @@ namespace BlankApp2.ViewModels
         public String QuestionLabel { get; set; }
         public int? AnswerEntry { get; set; }
         public String AnswerLabel { get; set; }
+        public String AnswerColor { get; set; }
         public DelegateCommand RefreshButton { get; set; }
         public DelegateCommand SubmitButton { get; set; }
 
@@ -49,6 +50,7 @@ namespace BlankApp2.ViewModels
             NumB = random.Next(0, 10);
             QuestionLabel = NumA.ToString() + "+" + NumB.ToString() + "=？";
             AnswerLabel = "";
+            AnswerColor = "";
             AnswerEntry = null;
         }
 
@@ -57,10 +59,12 @@ namespace BlankApp2.ViewModels
             if (AnswerEntry == NumA + NumB)
             {
                 AnswerLabel = "你的答案是正確的";
+                AnswerColor = "Green";
             }
             else
             {
                 AnswerLabel = "你的答案是錯誤的";
+                AnswerColor = "OrangeRed";
             }
         }
     }
